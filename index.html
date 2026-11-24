@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kique Pérez — Tarjeta Digital & Show en Vivo</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    globalThis.tailwind = globalThis.tailwind || {};
+    globalThis.tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'obsidian-ground': '#0D0818',
+            'amethyst-deep': '#150C28',
+            'electric-violet': '#8B5CF6',
+            'electric-violet-hover': '#7C3AED',
+            'neon-cyan': '#06B6D4',
+            'neon-cyan-hover': '#0891B2',
+            'gold-accent': '#F59E0B',
+            'gold-light': '#FBBF24',
+            'glass-surface': '#1A122E',
+            'glass-border': '#3D2A5E',
+            'dark-surface': '#150C28',
+            'dark-surface-container': '#201538',
+            'dark-surface-container-high': '#2D1E4E',
+            'dark-on-background': '#F9FAFB',
+            'dark-on-surface': '#F3F4F6',
+            'dark-on-surface-variant': '#D1D5DB',
+          },
+          borderRadius: {
+            'sm': '8px',
+            'DEFAULT': '14px',
+            'md': '16px',
+            'lg': '20px',
+            'xl': '24px',
+            'full': '9999px',
+          },
+          fontFamily: {
+            'display': ['"Hanken Grotesk"', 'sans-serif'],
+            'headline': ['"Hanken Grotesk"', 'sans-serif'],
+            'body': ['"DM Sans"', 'sans-serif'],
+            'label': ['"DM Sans"', 'sans-serif'],
+            'mono': ['"DM Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'glow-violet': '0 0 25px rgba(139, 92, 246, 0.5)',
+            'glow-cyan': '0 0 25px rgba(6, 182, 212, 0.5)',
+            'glow-gold': '0 0 25px rgba(245, 158, 11, 0.55)',
+            'glow-emerald': '0 0 25px rgba(16, 185, 129, 0.45)',
+          }
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts: Hanken Grotesk & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Hanken+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      vertical-align: middle;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0D0818] text-dark-on-background antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen relative flex justify-center">
+
+  <!-- Fixed Background: Logo_fondo.jpg (Visible, vibrante y cinematográfico con Kique Pérez y el caballo blanco) -->
+  <div class="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
+    <img 
+      src="Logo_fondo.jpg" 
+      alt="" 
+      class="w-full h-full object-cover object-top opacity-55 filter brightness-105 contrast-110 scale-100"
+    >
+    <!-- Gradientes elegantes: deja ver la pintura arriba y transiciona suavemente hacia violeta/ámbar profundo abajo -->
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/25 via-[#0D0818]/80 to-[#0D0818] via-35%"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/20 via-violet-600/15 to-transparent"></div>
+    <div class="absolute top-20 right-0 w-72 h-72 rounded-full bg-violet-600/25 blur-3xl"></div>
+    <div class="absolute top-80 left-0 w-80 h-80 rounded-full bg-amber-500/20 blur-3xl"></div>
+  </div>
+
+  <!-- Main Mobile Container (max-w-[480px]) -->
+  <div class="w-full max-w-[480px] px-4 pt-8 pb-32 flex flex-col gap-9">
+
+    <!-- 1. HERO PROFILE HEADER (Con espacios generosos, nada encimado) -->
+    <header class="flex flex-col items-center text-center">
+      <!-- Circular Avatar with Brilliant Glowing Ring -->
+      <div class="relative group">
+        <div class="relative w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-amber-400 via-violet-500 to-amber-300 shadow-glow-gold transition-transform duration-300 group-hover:scale-105">
+          <img 
+            src="https://lh3.googleusercontent.com/aida/ALJJyrB5jHaDTg0TmWTgecT4dnY6G9KQ5vJMEuoKzdGv2jx1w-YaLlcSFPCfPrXbXQ0G3B-7s2ogTAK5NrKdiFR81JEgCMIwycd3PLwlqb-8dNI-80viI3sre9h20ZibhIJ4gCaao2ZaqMZDxuL1e8DC8xWnc4g5baG3CnqMoZGkLSPdbRS8RRFnO9Jb2jckJUni2efc7g2bfIU7CNB8oqowJRivEJdZF87IzhpYDL6ucn2sJir2mbIK" 
+            alt="Kique Pérez - Cantante y Show en Vivo" 
+            class="w-full h-full rounded-full object-cover object-top border-2 border-[#0D0818]"
+          >
+        </div>
+        <!-- Verified Badge -->
+        <span class="absolute bottom-1 right-1 inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0D0818] border-2 border-amber-400 text-neon-cyan shadow-lg shadow-amber-400/30" title="Artista Verificado" aria-label="Artista Verificado">
+          <span class="material-symbols-outlined material-symbols-filled text-lg">verified</span>
+        </span>
+      </div>
+
+      <!-- Spacing: Artist Brand Logo (Ubicado debajo de la foto del artista, sin caja negra y más grande) -->
+      <div class="w-full flex justify-center mt-5 mb-2">
+        <h1 class="sr-only">Kique Pérez</h1>
+        <img 
+          src="Logo_pincipal.jpeg" 
+          alt="Kique Pérez" 
+          class="h-28 sm:h-32 w-auto max-w-[320px] sm:max-w-[360px] object-contain mix-blend-screen drop-shadow-[0_0_25px_rgba(245,158,11,0.6)] transition-transform duration-300 hover:scale-105"
+          style="mix-blend-mode: screen;"
+        >
+      </div>
+
+      <!-- Spacing: 100% Tapatío Tagline (Badge iluminado sin encimarse) -->
+      <div class="mt-2">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500/15 via-purple-500/15 to-amber-500/15 border border-amber-400/40 text-amber-200 text-xs sm:text-sm font-semibold tracking-wide shadow-[0_0_20px_rgba(245,158,11,0.25)] backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span>100% Tapatío • Banda, Mariachi &amp; Norteño Live Show</span>
+        </div>
+      </div>
+
+      <!-- Spacing: Quick-Action Floating Pill Buttons -->
+      <div class="w-full grid grid-cols-2 gap-3 mt-6">
+        <a 
+          href="https://wa.me/523310307661?text=Hola%20Kique%20P%C3%A9rez,%20me%20gustar%C3%ADa%20cotizar%20un%20show%20para%20un%20evento." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-white font-label text-sm font-bold tracking-wide shadow-glow-emerald transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+        >
+          <span class="material-symbols-outlined text-xl">chat</span>
+          <span>WhatsApp / Call</span>
+        </a>
+
+        <button 
+          type="button" 
+          id="save-vcard-btn" 
+          class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-full bg-slate-900/80 hover:bg-slate-800/90 border border-amber-400/50 hover:border-amber-400 text-amber-200 hover:text-white font-label text-sm font-semibold tracking-wide backdrop-blur-xl shadow-glow-gold transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+        >
+          <span class="material-symbols-outlined text-xl text-amber-400">person_add</span>
+          <span>Guardar Contacto</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. INTERACTIVE MULTI-GENRE VIDEO SHOWCASE -->
+    <section aria-labelledby="showcase-heading" class="flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse shadow-glow-gold"></span>
+          <h2 id="showcase-heading" class="font-headline text-xl font-bold tracking-tight text-white flex items-center gap-2">
+            Listen &amp; Watch
+          </h2>
+        </div>
+        <span class="font-mono text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 shadow-sm">
+          90 MIN LIVE SHOW
+        </span>
+      </div>
+
+      <!-- Segmented Tab Bar (Vibrante y nítido) -->
+      <div role="tablist" aria-label="Géneros musicales" class="grid grid-cols-3 gap-1.5 p-1.5 rounded-full bg-slate-900/85 backdrop-blur-xl border border-amber-400/30 shadow-lg">
+        <button 
+          role="tab" 
+          id="tab-banda" 
+          aria-selected="true" 
+          aria-controls="panel-banda" 
+          tabindex="0" 
+          data-genre-tab="banda" 
+          class="genre-tab py-2.5 px-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-label text-sm font-bold shadow-glow-gold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+        >
+          Banda
+        </button>
+        <button 
+          role="tab" 
+          id="tab-mariachi" 
+          aria-selected="false" 
+          aria-controls="panel-mariachi" 
+          tabindex="-1" 
+          data-genre-tab="mariachi" 
+          class="genre-tab py-2.5 px-3 rounded-full text-slate-300 hover:text-white font-label text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+        >
+          Mariachi
+        </button>
+        <button 
+          role="tab" 
+          id="tab-norteno" 
+          aria-selected="false" 
+          aria-controls="panel-norteno" 
+          tabindex="-1" 
+          data-genre-tab="norteno" 
+          class="genre-tab py-2.5 px-3 rounded-full text-slate-300 hover:text-white font-label text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+        >
+          Norteño
+        </button>
+      </div>
+
+      <!-- BANDA PANEL -->
+      <div role="tabpanel" id="panel-banda" aria-labelledby="tab-banda" class="genre-panel flex flex-col gap-3.5">
+        <!-- Banda Video 1 -->
+        <article 
+          class="video-trigger group cursor-pointer rounded-2xl overflow-hidden bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 transition-all duration-200 hover:border-amber-400 hover:shadow-glow-gold"
+          data-youtube-id="4ln-fqh-IMg"
+          data-video-title="Kique Pérez con Banda en Vivo"
+          data-video-desc="Presentación en vivo con banda sinaloense completa y metales"
+          data-video-genre="Banda • En Vivo"
+          data-video-badge="BANDA"
+        >
+          <div class="relative aspect-video bg-black overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/4ln-fqh-IMg/hqdefault.jpg" 
+              alt="Kique Pérez con Banda en Vivo" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center transition-colors group-hover:bg-slate-950/15">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-slate-950/80 backdrop-blur-md border-2 border-amber-400 text-amber-300 shadow-glow-gold transition-all duration-200 group-hover:scale-110">
+                <span class="material-symbols-outlined material-symbols-filled text-3xl">play_arrow</span>
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-gradient-to-r from-amber-500 to-orange-500 font-mono text-[10px] font-extrabold text-slate-950 tracking-wider shadow">
+              BANDA
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/90 border border-amber-400/40 font-mono text-xs font-bold text-amber-300">
+              EN VIVO
+            </span>
+          </div>
+          <div class="p-4 flex items-center justify-between gap-3">
+            <div>
+              <h3 class="font-headline text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                Kique Pérez con Banda en Vivo
+              </h3>
+              <p class="font-body text-xs text-amber-200/80 mt-0.5">
+                Show de Banda Sinaloense
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+          </div>
+        </article>
+
+        <!-- Banda Video 2 -->
+        <article 
+          class="video-trigger group cursor-pointer rounded-2xl overflow-hidden bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 transition-all duration-200 hover:border-amber-400 hover:shadow-glow-gold"
+          data-youtube-id="4Lj4JnPrMZs"
+          data-video-title="Show de Banda en Directo"
+          data-video-desc="Sesión en vivo con ensamble y repertorio sinaloense"
+          data-video-genre="Banda • Sesión en Vivo"
+          data-video-badge="EN VIVO"
+        >
+          <div class="relative aspect-video bg-black overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/4Lj4JnPrMZs/hqdefault.jpg" 
+              alt="Show de Banda en Directo" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center transition-colors group-hover:bg-slate-950/15">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-slate-950/80 backdrop-blur-md border-2 border-amber-400 text-amber-300 shadow-glow-gold transition-all duration-200 group-hover:scale-110">
+                <span class="material-symbols-outlined material-symbols-filled text-3xl">play_arrow</span>
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-purple-600 font-mono text-[10px] font-extrabold text-white tracking-wider shadow">
+              EN VIVO
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/90 border border-amber-400/40 font-mono text-xs font-bold text-amber-300">
+              BANDA
+            </span>
+          </div>
+          <div class="p-4 flex items-center justify-between gap-3">
+            <div>
+              <h3 class="font-headline text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                Show de Banda en Directo
+              </h3>
+              <p class="font-body text-xs text-amber-200/80 mt-0.5">
+                Live Performance • Banda
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- MARIACHI PANEL -->
+      <div role="tabpanel" id="panel-mariachi" aria-labelledby="tab-mariachi" class="genre-panel hidden flex-col gap-3.5">
+        <!-- Mariachi Video 1 -->
+        <article 
+          class="video-trigger group cursor-pointer rounded-2xl overflow-hidden bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 transition-all duration-200 hover:border-amber-400 hover:shadow-glow-gold"
+          data-youtube-id="UKvrbiAlg9Q"
+          data-video-title="Kique Pérez con Mariachi"
+          data-video-desc="Actuación de gala en vivo con traje de charro y mariachi completo"
+          data-video-genre="Mariachi • Gala en Vivo"
+          data-video-badge="DE GALA"
+        >
+          <div class="relative aspect-video bg-black overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/UKvrbiAlg9Q/hqdefault.jpg" 
+              alt="Kique Pérez con Mariachi" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center transition-colors group-hover:bg-slate-950/15">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-slate-950/80 backdrop-blur-md border-2 border-amber-400 text-amber-300 shadow-glow-gold transition-all duration-200 group-hover:scale-110">
+                <span class="material-symbols-outlined material-symbols-filled text-3xl">play_arrow</span>
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-gradient-to-r from-amber-500 to-orange-500 font-mono text-[10px] font-extrabold text-slate-950 tracking-wider shadow">
+              DE GALA
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/90 border border-amber-400/40 font-mono text-xs font-bold text-amber-300">
+              MARIACHI
+            </span>
+          </div>
+          <div class="p-4 flex items-center justify-between gap-3">
+            <div>
+              <h3 class="font-headline text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                Kique Pérez con Mariachi
+              </h3>
+              <p class="font-body text-xs text-amber-200/80 mt-0.5">
+                Charro Live Tribute • Mariachi
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+          </div>
+        </article>
+
+        <!-- Mariachi Video 2 -->
+        <article 
+          class="video-trigger group cursor-pointer rounded-2xl overflow-hidden bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 transition-all duration-200 hover:border-amber-400 hover:shadow-glow-gold"
+          data-youtube-id="gQtQlxAL3ho"
+          data-video-title="Serenata y Mariachi en Directo"
+          data-video-desc="Violines, trompetas y guitarrón para eventos y bodas exclusivas"
+          data-video-genre="Mariachi • En Vivo"
+          data-video-badge="EN VIVO"
+        >
+          <div class="relative aspect-video bg-black overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/gQtQlxAL3ho/hqdefault.jpg" 
+              alt="Serenata y Mariachi en Directo" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center transition-colors group-hover:bg-slate-950/15">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-slate-950/80 backdrop-blur-md border-2 border-amber-400 text-amber-300 shadow-glow-gold transition-all duration-200 group-hover:scale-110">
+                <span class="material-symbols-outlined material-symbols-filled text-3xl">play_arrow</span>
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-purple-600 font-mono text-[10px] font-extrabold text-white tracking-wider shadow">
+              EN VIVO
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/90 border border-amber-400/40 font-mono text-xs font-bold text-amber-300">
+              MARIACHI
+            </span>
+          </div>
+          <div class="p-4 flex items-center justify-between gap-3">
+            <div>
+              <h3 class="font-headline text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                Serenata y Mariachi en Directo
+              </h3>
+              <p class="font-body text-xs text-amber-200/80 mt-0.5">
+                Gala &amp; Eventos Privados • Mariachi
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- NORTEÑO PANEL -->
+      <div role="tabpanel" id="panel-norteno" aria-labelledby="tab-norteno" class="genre-panel hidden flex-col gap-3.5">
+        <!-- Norteño Video 1 -->
+        <article 
+          class="video-trigger group cursor-pointer rounded-2xl overflow-hidden bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 transition-all duration-200 hover:border-amber-400 hover:shadow-glow-gold"
+          data-youtube-id="AqjtfwXXIi0"
+          data-video-title="Kique Pérez Norteño en Vivo"
+          data-video-desc="Repertorio norteño en directo con acordeón y bajo sexto"
+          data-video-genre="Norteño • En Directo"
+          data-video-badge="NORTEÑO"
+        >
+          <div class="relative aspect-video bg-black overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/AqjtfwXXIi0/hqdefault.jpg" 
+              alt="Kique Pérez Norteño en Vivo" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center transition-colors group-hover:bg-slate-950/15">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-slate-950/80 backdrop-blur-md border-2 border-amber-400 text-amber-300 shadow-glow-gold transition-all duration-200 group-hover:scale-110">
+                <span class="material-symbols-outlined material-symbols-filled text-3xl">play_arrow</span>
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-gradient-to-r from-amber-500 to-orange-500 font-mono text-[10px] font-extrabold text-slate-950 tracking-wider shadow">
+              NORTEÑO
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/90 border border-amber-400/40 font-mono text-xs font-bold text-amber-300">
+              EN VIVO
+            </span>
+          </div>
+          <div class="p-4 flex items-center justify-between gap-3">
+            <div>
+              <h3 class="font-headline text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                Kique Pérez Norteño en Vivo
+              </h3>
+              <p class="font-body text-xs text-amber-200/80 mt-0.5">
+                Acordeón &amp; Bajo Sexto • Norteño
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+          </div>
+        </article>
+
+        <!-- Norteño Video 2 -->
+        <article 
+          class="video-trigger group cursor-pointer rounded-2xl overflow-hidden bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 transition-all duration-200 hover:border-amber-400 hover:shadow-glow-gold"
+          data-youtube-id="7HypBUuyUM0"
+          data-video-title="Noche Norteña en Palenque"
+          data-video-desc="Ambiente festivo, corridos clásicos y fiesta en palenque"
+          data-video-genre="Norteño • Sesión en Vivo"
+          data-video-badge="PALENQUE"
+        >
+          <div class="relative aspect-video bg-black overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/7HypBUuyUM0/hqdefault.jpg" 
+              alt="Noche Norteña en Palenque" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center transition-colors group-hover:bg-slate-950/15">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-slate-950/80 backdrop-blur-md border-2 border-amber-400 text-amber-300 shadow-glow-gold transition-all duration-200 group-hover:scale-110">
+                <span class="material-symbols-outlined material-symbols-filled text-3xl">play_arrow</span>
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-purple-600 font-mono text-[10px] font-extrabold text-white tracking-wider shadow">
+              PALENQUE
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/90 border border-amber-400/40 font-mono text-xs font-bold text-amber-300">
+              EN VIVO
+            </span>
+          </div>
+          <div class="p-4 flex items-center justify-between gap-3">
+            <div>
+              <h3 class="font-headline text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                Noche Norteña en Palenque
+              </h3>
+              <p class="font-body text-xs text-amber-200/80 mt-0.5">
+                Fiesta &amp; Palenque • Norteño
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. DIRECT CONTACT & SOCIAL HUB -->
+    <section id="lets-connect" aria-labelledby="lets-connect-heading" class="flex flex-col gap-4 scroll-mt-6">
+      <article class="rounded-2xl bg-gradient-to-b from-slate-900/95 via-[#18102C]/95 to-slate-900/95 backdrop-blur-xl border border-amber-400/40 p-5 flex flex-col gap-4 shadow-xl">
+        <header class="flex items-center justify-between">
+          <div>
+            <h2 id="lets-connect-heading" class="font-headline text-xl font-bold tracking-tight text-white flex items-center gap-2">
+              <span class="text-amber-400">★</span> ¡Vamos a conectarnos!
+            </h2>
+            <p class="font-body text-xs text-amber-200/80 mt-0.5">
+              Contrataciones, Fechas &amp; Booking Directo
+            </p>
+          </div>
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        </header>
+
+        <!-- One-Tap Clickable Rows: Kique Pérez & Gustavo Gómez -->
+        <div class="flex flex-col gap-3">
+          <!-- Contacto 1: Kique Pérez -->
+          <div class="group flex items-center justify-between p-3.5 rounded-xl bg-slate-950/80 border border-amber-400/40 hover:border-amber-400 transition-all shadow-md">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <span class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 shadow-glow-gold shrink-0">
+                <span class="material-symbols-outlined material-symbols-filled text-xl">person</span>
+              </span>
+              <div class="min-w-0">
+                <p class="font-label text-sm font-bold text-white">Kique Pérez</p>
+                <p class="font-mono text-xs font-semibold text-amber-300">33-10-30-76-61</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <a 
+                href="tel:+523310307661" 
+                class="w-10 h-10 rounded-full bg-slate-800 hover:bg-neon-cyan hover:text-slate-950 text-neon-cyan border border-neon-cyan/40 inline-flex items-center justify-center transition-all active:scale-95 shadow"
+                title="Llamar a Kique Pérez"
+              >
+                <span class="material-symbols-outlined text-lg">call</span>
+              </a>
+              <a 
+                href="https://wa.me/523310307661?text=Hola%20Kique%20P%C3%A9rez,%20me%20gustar%C3%ADa%20cotizar%20un%20show." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white inline-flex items-center justify-center transition-all active:scale-95 shadow-glow-emerald"
+                title="WhatsApp a Kique Pérez"
+              >
+                <span class="material-symbols-outlined text-lg">chat</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contacto 2: Gustavo Gómez -->
+          <div class="group flex items-center justify-between p-3.5 rounded-xl bg-slate-950/80 border border-purple-500/40 hover:border-purple-400 transition-all shadow-md">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <span class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-tr from-violet-600 to-indigo-600 text-white shadow-glow-violet shrink-0">
+                <span class="material-symbols-outlined material-symbols-filled text-xl">person</span>
+              </span>
+              <div class="min-w-0">
+                <p class="font-label text-sm font-bold text-white">Gustavo Gómez</p>
+                <p class="font-mono text-xs font-semibold text-purple-300">33-30-15-64-00</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <a 
+                href="tel:+523330156400" 
+                class="w-10 h-10 rounded-full bg-slate-800 hover:bg-neon-cyan hover:text-slate-950 text-neon-cyan border border-neon-cyan/40 inline-flex items-center justify-center transition-all active:scale-95 shadow"
+                title="Llamar a Gustavo Gómez"
+              >
+                <span class="material-symbols-outlined text-lg">call</span>
+              </a>
+              <a 
+                href="https://wa.me/523330156400?text=Hola%20Gustavo%20G%C3%B3mez,%20me%20gustar%C3%ADa%20cotizar%20el%20show%20de%20Kique%20P%C3%A9rez." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white inline-flex items-center justify-center transition-all active:scale-95 shadow-glow-emerald"
+                title="WhatsApp a Gustavo Gómez"
+              >
+                <span class="material-symbols-outlined text-lg">chat</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Symmetrical Social Icon Grid (5 Platforms con colores vibrantes) -->
+      <nav aria-label="Redes sociales y streaming" class="grid grid-cols-5 gap-2.5">
+        <!-- Instagram -->
+        <a 
+          href="https://instagram.com/kiqueperezkp" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex flex-col items-center justify-center gap-1.5 py-3.5 px-1 rounded-2xl bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 text-slate-300 hover:border-pink-500 hover:text-pink-400 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)] transition-all active:scale-95"
+          title="Instagram"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span class="font-label text-[11px] font-medium">Instagram</span>
+        </a>
+
+        <!-- Facebook -->
+        <a 
+          href="https://www.facebook.com/KiquePerezKP" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex flex-col items-center justify-center gap-1.5 py-3.5 px-1 rounded-2xl bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 text-slate-300 hover:border-blue-500 hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all active:scale-95"
+          title="Facebook"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span class="font-label text-[11px] font-medium">Facebook</span>
+        </a>
+
+        <!-- TikTok -->
+        <a 
+          href="https://www.tiktok.com/@kique.perez.kp" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex flex-col items-center justify-center gap-1.5 py-3.5 px-1 rounded-2xl bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 text-slate-300 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all active:scale-95"
+          title="TikTok"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path>
+          </svg>
+          <span class="font-label text-[11px] font-medium">TikTok</span>
+        </a>
+
+        <!-- YouTube -->
+        <a 
+          href="https://youtube.com/@kiqueperezkp" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex flex-col items-center justify-center gap-1.5 py-3.5 px-1 rounded-2xl bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 text-slate-300 hover:border-red-500 hover:text-red-400 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)] transition-all active:scale-95"
+          title="YouTube"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"></path>
+          </svg>
+          <span class="font-label text-[11px] font-medium">YouTube</span>
+        </a>
+
+        <!-- Spotify -->
+        <a 
+          href="https://open.spotify.com/intl-es/artist/68sx1Rt780SVg2Y76q8o6G" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex flex-col items-center justify-center gap-1.5 py-3.5 px-1 rounded-2xl bg-slate-900/85 backdrop-blur-xl border border-purple-500/30 text-slate-300 hover:border-emerald-400 hover:text-emerald-300 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all active:scale-95"
+          title="Spotify"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path>
+          </svg>
+          <span class="font-label text-[11px] font-medium">Spotify</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Footer Copyright Note -->
+    <footer class="text-center pt-2">
+      <p class="font-mono text-[11px] text-amber-200/60">
+        © 2026 Kique Pérez. Todos los derechos reservados.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- 4. STICKY BOTTOM ACTION BAR (Lujosa y de alta conversión) -->
+  <aside aria-label="Reserva rápida" class="fixed bottom-0 inset-x-0 z-40 flex justify-center pointer-events-none">
+    <div class="w-full max-w-[480px] px-4 pb-5 pt-3 bg-[#0D0818]/90 backdrop-blur-2xl border-t border-amber-400/30 pointer-events-auto">
+      <a 
+        href="#lets-connect" 
+        class="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 hover:from-amber-300 hover:to-orange-300 text-slate-950 font-label text-base font-black shadow-glow-gold transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+      >
+        <span class="material-symbols-outlined material-symbols-filled text-2xl">event_available</span>
+        <span>Book Now / Cotizar Evento</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- INTERACTIVE YOUTUBE VIDEO PREVIEW MODAL -->
+  <div 
+    id="video-modal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modal-video-title" 
+    class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0D0818]/95 backdrop-blur-xl transition-opacity"
+  >
+    <div class="w-full max-w-[460px] rounded-2xl bg-slate-900 border-2 border-amber-400/50 overflow-hidden flex flex-col shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+      <!-- YouTube Video Container inside Modal -->
+      <div class="relative aspect-video bg-black overflow-hidden">
+        <iframe 
+          id="modal-youtube-iframe" 
+          src="" 
+          title="Reproductor de Video YouTube" 
+          class="w-full h-full" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+        <!-- Close Button -->
+        <button 
+          type="button" 
+          id="close-video-modal" 
+          aria-label="Cerrar reproductor" 
+          class="absolute top-2.5 right-2.5 z-20 inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-950/80 border border-amber-400/60 text-white hover:border-amber-400 transition-colors"
+        >
+          <span class="material-symbols-outlined text-base">close</span>
+        </button>
+      </div>
+
+      <!-- Video Details & Action -->
+      <div class="p-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <h3 id="modal-video-title" class="font-headline text-lg font-bold text-white truncate"></h3>
+            <p id="modal-video-genre" class="font-mono text-xs font-semibold text-amber-300 mt-0.5"></p>
+          </div>
+          <span id="modal-video-badge" class="font-mono text-[10px] font-extrabold px-2.5 py-1 rounded bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shrink-0 shadow"></span>
+        </div>
+
+        <p id="modal-video-desc" class="font-body text-xs text-slate-300 leading-relaxed"></p>
+
+        <div class="flex items-center justify-between gap-3 pt-2 border-t border-purple-500/30">
+          <a 
+            href="#lets-connect" 
+            id="modal-book-cta" 
+            class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-label text-xs font-bold tracking-wide transition-all active:scale-95 shadow-glow-gold"
+          >
+            <span class="material-symbols-outlined text-base">calendar_month</span>
+            <span>Cotizar este Show</span>
+          </a>
+          <button 
+            type="button" 
+            id="modal-secondary-close" 
+            class="py-3 px-4 rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:text-white font-label text-xs font-semibold transition-colors"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VCARD NOTIFICATION TOAST -->
+  <div 
+    id="vcard-toast" 
+    role="status" 
+    aria-live="polite" 
+    class="hidden fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[420px] px-4 py-3 rounded-full bg-slate-900/95 border-2 border-amber-400/80 backdrop-blur-xl flex items-center justify-between gap-3 shadow-glow-gold animate-in fade-in slide-in-from-top-4 duration-200"
+  >
+    <div class="flex items-center gap-2.5 min-w-0">
+      <span class="material-symbols-outlined material-symbols-filled text-amber-400 text-xl shrink-0">check_circle</span>
+      <p class="font-label text-xs font-medium text-white truncate">
+        Contacto de <span class="font-bold text-amber-300">Kique Pérez (33-10-30-76-61)</span> descargado
+      </p>
+    </div>
+    <button type="button" id="close-toast" aria-label="Cerrar notificación" class="text-slate-400 hover:text-white shrink-0">
+      <span class="material-symbols-outlined text-lg">close</span>
+    </button>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    (function () {
+      // 1. Genre Tabs Logic
+      const tabs = document.querySelectorAll('.genre-tab');
+      const panels = {
+        banda: document.getElementById('panel-banda'),
+        mariachi: document.getElementById('panel-mariachi'),
+        norteno: document.getElementById('panel-norteno')
+      };
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-genre-tab');
+
+          tabs.forEach(t => {
+            const isActive = t === tab;
+            t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            t.setAttribute('tabindex', isActive ? '0' : '-1');
+            if (isActive) {
+              t.className = 'genre-tab py-2.5 px-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-label text-sm font-bold shadow-glow-gold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400';
+            } else {
+              t.className = 'genre-tab py-2.5 px-3 rounded-full text-slate-300 hover:text-white font-label text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400';
+            }
+          });
+
+          Object.keys(panels).forEach(key => {
+            const panel = panels[key];
+            if (key === target) {
+              panel.classList.remove('hidden');
+              panel.classList.add('flex');
+            } else {
+              panel.classList.add('hidden');
+              panel.classList.remove('flex');
+            }
+          });
+        });
+      });
+
+      // 2. Video Preview Modal Logic (con reproductor real de YouTube)
+      const modal = document.getElementById('video-modal');
+      const modalTitle = document.getElementById('modal-video-title');
+      const modalGenre = document.getElementById('modal-video-genre');
+      const modalBadge = document.getElementById('modal-video-badge');
+      const modalDesc = document.getElementById('modal-video-desc');
+      const iframe = document.getElementById('modal-youtube-iframe');
+      const closeModal = document.getElementById('close-video-modal');
+      const secondaryClose = document.getElementById('modal-secondary-close');
+      const modalBook = document.getElementById('modal-book-cta');
+
+      document.querySelectorAll('.video-trigger').forEach(card => {
+        card.addEventListener('click', () => {
+          const ytid = card.getAttribute('data-youtube-id') || '';
+          modalTitle.textContent = card.getAttribute('data-video-title') || 'Actuación en Vivo';
+          modalGenre.textContent = card.getAttribute('data-video-genre') || 'Video Musical';
+          modalBadge.textContent = card.getAttribute('data-video-badge') || 'EN VIVO';
+          modalDesc.textContent = card.getAttribute('data-video-desc') || 'Disfruta de este adelanto del repertorio en vivo.';
+          if (iframe && ytid) {
+            iframe.src = 'https://www.youtube.com/embed/' + ytid + '?autoplay=1&rel=0';
+          }
+          modal.classList.remove('hidden');
+        });
+      });
+
+      function hideModal() {
+        modal.classList.add('hidden');
+        if (iframe) iframe.src = '';
+      }
+
+      closeModal.addEventListener('click', hideModal);
+      secondaryClose.addEventListener('click', hideModal);
+      modalBook.addEventListener('click', hideModal);
+      modal.addEventListener('click', e => {
+        if (e.target === modal) hideModal();
+      });
+
+      // 3. vCard Generation & Download
+      const vcardBtn = document.getElementById('save-vcard-btn');
+      const toast = document.getElementById('vcard-toast');
+      const closeToast = document.getElementById('close-toast');
+      let toastTimer = null;
+
+      function downloadVCard() {
+        const vcardContent = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          'FN:Kique Pérez',
+          'N:Pérez;Kique;;;',
+          'TITLE:Cantante & Show en Vivo (Banda, Mariachi, Norteño)',
+          'ORG:Show Kique Pérez',
+          'TEL;TYPE=CELL,VOICE:+523310307661',
+          'TEL;TYPE=WORK,VOICE:+523330156400',
+          'URL:https://instagram.com/kiqueperezkp',
+          'NOTE:Show Ecuestre, Banda Sinaloense, Mariachi y Norteño. Contactos: Kique Pérez (33-10-30-76-61) y Gustavo Gómez (33-30-15-64-00)',
+          'END:VCARD'
+        ].join('\r\n');
+
+        const blob = new Blob([vcardContent], { type: 'text/vcard;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Kique_Perez_Contacto.vcf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      vcardBtn.addEventListener('click', () => {
+        downloadVCard();
+        toast.classList.remove('hidden');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3500);
+      });
+
+      closeToast.addEventListener('click', () => {
+        toast.classList.add('hidden');
+      });
+    })();
+  </script>
+</body>
+</html>
